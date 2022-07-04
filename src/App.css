@@ -1,20 +1,10 @@
 .App {
+  margin: 2em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +18,111 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #505050;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+  margin: 0;
+  padding: 1em;
+  color: #0e89f4;
+}
+h2 {
+  font-size: 1em;
+  text-align: left;
+}
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+  margin: 2em;
+  gap: 10px;
+  align-items: top;
+  justify-content: center;
+}
+.hidden-options {
+  position: relative;
+}
+ul {
+  height: 10em;
+  overflow: auto;
+}
+
+.c-single-select-dropdown {
+  position: relative;
+  border: solid 1px #eee;
+  font-size: 1em;
+  padding: 10px;
+}
+.c-multi-select-dropdown {
+  position: relative;
+  width: 25em;
+}
+.c-multi-select-dropdown__selected {
+  border: solid 1px #eee;
+  font-size: 1em;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-multi-select-dropdown__data {
+  padding-left: 0;
+}
+.c-multi-select-dropdown__options {
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  width: 100%;
+  list-style: none;
+  padding-left: 0px;
+  border: solid 1px #eee;
+  padding: 5px 0px;
+}
+.c-multi-select-dropdown__option {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.c-multi-select-dropdown__option:hover {
+  background-color: #f4f9fe;
+}
+.checkbox {
+  margin-right: 6px;
+}
+button {
+  background-color: #e9eaff;
+  color: #001058;
+  border: transparent;
+  padding: 10px;
+  height: 5em;
+  display: block;
+  position: absolute;
+}
+.name {
+  border: 1px solid #e9eaff;
+  padding: 0.5em;
+  display: inline;
+  float: left;
+  margin: 5px;
+}
+.hidden-options {
+  padding: 0.5em;
+  display: inline;
+  float: left;
+  margin: 5px;
+}
+.submit {
+  color: white;
+  background-color: #9699f5;
+  border: transparent;
+  height: 2em;
+  width: 13em;
+  border-radius: 1em;
+  font-size: 1em;
 }

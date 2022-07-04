@@ -1,5 +1,6 @@
 import "./App.css";
 import CreateProfile from "./components/Profile/CreateProfile";
+import { Age, Tag } from "./components/Data/sampleData";
 
 function App() {
   return (
@@ -9,10 +10,15 @@ function App() {
         alt="Hive"
       ></img>
       <h1>CREATE PROFILE</h1>
-      <CreateProfile />
-      <a href="https://github.com/jbeanz" target="blank">
-        Github source code!
-      </a>
+      <CreateProfile
+        singleSelectData={Age}
+        singleSelectLabel={"Age"}
+        multiSelectData={Tag}
+        multiSelectLabel={"Tag"}
+      />
+      <form action="https://github.com/jbeanz/hive" target="blank">
+        <input className="submit" type="submit" value="Github Source Code!" />
+      </form>
     </div>
   );
 }

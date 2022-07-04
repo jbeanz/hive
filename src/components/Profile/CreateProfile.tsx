@@ -1,12 +1,23 @@
 import { useState } from "react";
 import SingleSelect from "./SingleSelect";
 import MultiSelect from "./MultiSelect";
-import { Age, Tag } from "../Data/sampleData";
+import Data from "../Data/sampleData";
 
-const CreateProfile = () => {
+interface Props {
+  singleSelectData: string[];
+  singleSelectLabel: string;
+  multiSelectData: Data[];
+  multiSelectLabel: string;
+}
+
+const CreateProfile = ({
+  singleSelectData,
+  singleSelectLabel,
+  multiSelectData,
+  multiSelectLabel,
+}: Props) => {
   const [selected, setSelectedOptions] = useState<number[]>([]);
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
-  const data = Tag;
 
   //Toggle multi-select names and options
   const toggleDisplay = (id: number, name: string, manualAction?: string) => {
@@ -14,7 +25,7 @@ const CreateProfile = () => {
     if (id === 0) {
       const allOptions = [];
       const allNames = [];
-      for (const option of data) {
+      for (const option of multiSelectData) {
         allOptions.push(option.id);
         allNames.push(option.name);
       }
@@ -59,13 +70,13 @@ const CreateProfile = () => {
   return (
     <div className="flexbox-container">
       <MultiSelect
-        label={"Tag"}
-        data={Tag}
+        label={multiSelectLabel}
+        data={multiSelectData}
         selected={selected}
         selectedNames={selectedNames}
         toggleDisplay={toggleDisplay}
       />
-      <SingleSelect label={"Age"} data={Age} />
+      <SingleSelect label={singleSelectLabel} data={singleSelectData} />
     </div>
   );
 };
